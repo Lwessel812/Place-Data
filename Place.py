@@ -7,12 +7,12 @@ start_time = time.time()
 
 os.system ('cls' if os.name == 'nt' else 'clear')
 
-#filename = "CutSet2.csv"
+filename = "CutSet.csv"
 
 data = pd.read_csv(filename)
 
-#data.sort_values("timestamp", kind = "mergesort")
+data.sort_values("timestamp", kind = "mergesort", ignore_index=False, inplace=True)
 
-data.to_csv("SortedSet.csv", index=False)
+data.to_csv("TimeSortedSet.csv", index=False)
 
 print(f"{(time.time() - start_time)} seconds")
