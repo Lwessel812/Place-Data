@@ -5,7 +5,7 @@ import os
 
 os.system ('cls' if os.name == 'nt' else 'clear')
 print("==========================================\n")
-filename = "CutSet.csv"
+filename = "SmallSet.csv"
 
 data = pd.read_csv(filename)
 
@@ -17,6 +17,6 @@ data = pd.read_csv(filename)
 #print("\nCSV Data after deleting the column 'user_id':\n")
 #print(data)
 
-#data.to_csv("CutSet.csv", index=False)
+#data.to_csv("SmallerCutSet.csv", index=False)
 
 #print(f"# Rows: {len(data.index)}")
