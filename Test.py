@@ -1,22 +1,18 @@
 import pandas as pd
-import os
+import os, time
 
 # 160353103-4 rows
 
+start_time = time.time()
+
 os.system ('cls' if os.name == 'nt' else 'clear')
-print("==========================================\n")
+
 filename = "SmallSet.csv"
 
 data = pd.read_csv(filename)
 
-#print(f"Original {filename} CSV Data: \n")
-#print(data)
+#data.sort_values("timestamp", kind = "mergesort")
 
-#data.drop("user_id", inplace=True, axis=1)
+#data.to_csv("SmallSortedSet.csv", index=False)
 
-#print("\nCSV Data after deleting the column 'user_id':\n")
-#print(data)
-
-#data.to_csv("SmallerCutSet.csv", index=False)
-
-#print(f"# Rows: {len(data.index)}")
+print(f"{(time.time() - start_time)} seconds")
