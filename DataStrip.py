@@ -1,5 +1,5 @@
 import pandas as pd
-import os, time, math
+import os, math, time
 
 # 160353103 rows with ending
 # 160033094 rows w/o pixel ending
