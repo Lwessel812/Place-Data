@@ -13,9 +13,7 @@ filename = "SortedSet.csv"
 
 data = pd.read_csv(filename)
 
-time = (time.time() - start_time)
-print(f"{time} seconds to load")
-print(f"~{math.floor(time / 60)} minutes to load")
+print(f"{(time.time() - start_time)} seconds to load")
 
 Count = 0
 Color = '\"FFFFFF\"'
