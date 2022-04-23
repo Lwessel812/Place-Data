@@ -4,6 +4,8 @@ import os, math, time
 # 160353103 rows with ending
 # 160033094 rows w/o pixel ending
 # 320010 pixles placed during ending
+# Count: 26140145        
+# Time: 130700725 minutes
 
 start_time = time.time()
 
@@ -18,8 +20,6 @@ print(f"{(time.time() - start_time)} seconds to load")
 Count = 0
 Color = '\"FFFFFF\"'
 Cords = "0,0"
-
-#data.to_csv("TimeSortedSet2.csv", index=False)
 
 for r in range (len(data.index)):
     if data.coordinate[r] == Cords:
