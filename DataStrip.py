@@ -1,31 +1,25 @@
+# This file strips unnecessary data from the csv file
+
 import pandas as pd
 import os, math, time
 
-# 160353103 rows with ending
-# 160033094 rows w/o pixel ending
-# 320010 pixles placed during ending
-
 start_time = time.time()
 
-os.system ('cls' if os.name == 'nt' else 'clear')
+os.system ("cls" if os.name == "nt" else "clear") # Clear console
 
-filename = "PlaceData.csv"
+filename = "PlaceData.csv" # Name/Path of file being imported
 
-data = pd.read_csv(filename)
+data = pd.read_csv(filename) # Import file into Pandas dataframe
 
 print(f"{(time.time() - start_time)} seconds to load")
 
-print(f"{len(data.index)} rows")
+print(f"{len(data.index)} rows") # Print the number of rows in the file
 
-data.drop("user_id", inplace=True, axis=1)
+data.drop("user_id", inplace=True, axis=1) # Strips user_id data out, I didnt need this
 
-data.replace(to_replace=[" UTC", "2022-04-04", "2022-04-03", "2022-04-02", "2022-04-01", ":", "#"], value=["", "4", "3", "2", "1", "", ""], inplace=True, regex=True)
+data.replace(to_replace=[" UTC", "2022-04-04", "2022-04-03", "2022-04-02", "2022-04-01", ":", "#"], value=["", "4", "3", "2", "1", "", ""], inplace=True, regex=True) # Stripping any data that is identical between every row, ounces save pounds
 
-#data = data[data["timestamp"].str.contains("05 ", regex=True) == False]
-
-data.replace(to_replace=["#"], value=[""], inplace=True, regex=True)
-
-data.to_csv("ProcessedSet.csv", index=False)
+data.to_csv("ProcessedSet.csv", index=False) # Save the new stripped file to another file
 
 time = (time.time() - start_time)
 print(f"{time} seconds to finish")
