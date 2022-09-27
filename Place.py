@@ -6,7 +6,7 @@ import os, math, time
 # 160353103 rows with whiteout ending
 # 160033094 rows w/o whiteout ending
 # 320010 pixles placed during ending
-# Count: 26140145        
+# Count: 26140145
 # Time: 130700725 minutes
 # Years: 248.6696
 # Days: 90764.3924
@@ -16,7 +16,7 @@ start_time = time.time()
 
 os.system ("cls" if os.name == "nt" else "clear") # Clear console
 
-filename = "SortedSet.csv" # Name/Path of file being imported
+filename = "C:\Temp\PlaceHistory\SortedSet.csv" # Name/Path of file being imported
 
 data = pd.read_csv(filename) # Import file into Pandas dataframe
 
